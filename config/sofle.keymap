@@ -43,17 +43,16 @@
         };
 
         lower_layer {
-// TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
-// |       | F1  | F2  |  F3  |  F4  |  F5  |                   |      |       |       |      |   +=  |  \|   |
-// |       | F6  | F7  |  F8  |  F9  |  F10 |                   |  n7  |  n8   |  n9   |  {[  |   ]}  |       |
-// |       | F11 | F12 |      |      |      |                   |  n4  |  n5   |  n6   |      |       |       |
+// |       | F1  | F2  |  F3  |  F4  |  F5  |                   |      |       |       |      |       |       |
+// |       | F6  | F7  |  F8  |  F9  |  F10 |                   |  n7  |  n8   |  n9   |  =+  |   \|  |       |
+// |       | F11 | F12 |      |      |      |                   |  n4  |  n5   |  n6   |  [{  |   ]}  |       |
 // |       |     |     |      |      |      |  MUTE  |  |  NUM  |  n1  |  n2   |  n3   |      |       |       |
 //               |     |      |      |      |        |  |   n0  |      |       |       |      |
             bindings = <
-&trans    &kp F1    &kp F2   &kp F3  &kp F4  &kp F5                           &trans     &trans     &trans     &trans    &kp EQUAL &kp BSLH
-&trans    &kp F6    &kp F7   &kp F8  &kp F9  &kp F10                          &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp LBKT  &kp RBKT  &trans
-&trans    &kp F11   &kp F12  &trans  &trans  &trans                           &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans    &trans    &trans
+&trans    &kp F1    &kp F2   &kp F3  &kp F4  &kp F5                           &trans     &trans     &trans     &trans    &trans    &trans
+&trans    &kp F6    &kp F7   &kp F8  &kp F9  &kp F10                          &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp EQUAL &kp BSLH  &trans
+&trans    &kp F11   &kp F12  &trans  &trans  &trans                           &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp LBKT  &kp RBKT  &trans
 &trans    &trans    &trans   &trans  &trans  &trans  &kp K_MUTE   &kp KP_NLCK &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans    &trans    &trans
                     &trans   &trans  &trans  &trans  &trans       &kp KP_N0   &trans     &trans     &trans     &trans
             >;
@@ -64,15 +63,15 @@
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// |     | INS  | PSCR |       |       |      |                | PGUP | HOME |   ^   | END  |       |  DEL  |
-// |     |      |      |       |       |      |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// |CAPS | UNDO | CUT  | COPY  | PASTE |      | MUTE |  |      |      |      |       |      |       |       |
+// |     | INS  | PSCR |       |       |      |                | PGUP | HOME |   ^   | END  |       |       |
+// |     |  \|  |  =+  |  [{   |  ]}   |      |                | PGDN |   <- |   v   |  ->  |       |  DEL  |
+// |     |      |      |       |       |      | MUTE |  |      |      |      |       |      |       |       |
 //              |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans   &trans    &trans  &trans
-&trans     &kp INS      &kp PSCRN    &trans       &trans       &trans                       &kp PG_UP &kp HOME  &kp UP   &kp END   &trans  &kp DEL
-&trans     &trans       &trans       &trans       &trans       &trans                       &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-&kp CAPS   &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &kp K_MUTE   &trans  &trans    &trans    &trans   &trans    &trans  &trans
+&trans     &kp INS      &kp PSCRN    &trans       &trans       &trans                       &kp PG_UP &kp HOME  &kp UP   &kp END   &trans  &trans
+&trans     &kp BSLH     &kp EQUAL    &kp LBKT     &kp RBKT     &trans                       &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &trans  &kp DEL
+&trans     &trans       &trans       &trans       &trans       &trans  &kp K_MUTE   &trans  &trans    &trans    &trans   &trans    &trans  &trans
                         &trans       &trans       &trans       &trans  &trans       &trans  &trans    &trans    &trans   &trans
             >;
 
